@@ -18,31 +18,32 @@
     <!-- Name area -->
 
     <section class="name-area">
-      <i class="fa-solid fa-robot" id="name-robot-icon"></i>
+      <img src="assets/images/roboto.png" alt="robot icon" class="roboto-icon">
       <p>My name is Roboto!</p>
       <p>What's your name?</p>
-      <input type="text" id="uname" placeholder="My name is..." />
+      <input type="text" name="username" required id="uname" placeholder="My name is..."/>
     </section>
 
     <!-- Character area -->
     <section class="character-area">
       <p>Who are you?</p>
 
+      <!-- Buttons to chose character with icons from https://www.flaticon.com/-->
       <div id="character-buttons">
         <button class="btn" id="unicorn">
-          <i class="fa-solid fa-alicorn"></i>
+          <img src="assets/images/unicorn.png" alt="unicorn icon">
         </button>
         <button class="btn" id="teddy">
-          <i class="fa-solid fa-teddy-bear"></i>
+          <img src="assets/images/teddy-bear.png" alt="teddy bear icon">
         </button>
         <button class="btn" id="dragon">
-          <i class="fa-solid fa-dragon"></i>
+          <img src="assets/images/dragon.png" alt="dragon icon">
         </button>
       </div>
 
       <div id="lets-play-button">
         <form action="game.html">
-          <input type="submit" value="Let's play Tic Tac Toe!">
+          <input type="submit" value="Let's play Tic Tac Toe!" />
         </form>
       </div>
     </section>
