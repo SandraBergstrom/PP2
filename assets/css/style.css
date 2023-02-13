@@ -12,7 +12,8 @@ body {
   font-weight: 500;
 }
 
-/* Presentation area */
+/* Index page */
+  /* Presentation area */
 
 h1 {
     font-size: 64px;
@@ -36,14 +37,14 @@ h1 {
 #uname-input {
   font-size: 24px;
   font-family: 'Indie Flower', Courier, monospace;
-  border: #F6A38E 1px solid;
+  border: #F6A38E 2px solid;
   border-radius: 5px;
   padding: 5px;
   text-align: center;
 }
 
 
-/* Character area */ 
+  /* Character area */ 
 
 .character-area {
   display: flex;
@@ -54,10 +55,19 @@ h1 {
 #character-buttons {
   display: flex;
   justify-content: center;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
 
-/* Character style */
+#lets-play-button input {
+  font-size: 24px;
+  font-family: 'Indie Flower', Courier, monospace;
+  background-color: white;
+  border: none;
+  padding: 15px, 20px;
+  text-align: center;
+}
+
+  /* Character style */
 
 .roboto-icon {
   background-color: #AAB1A9;
