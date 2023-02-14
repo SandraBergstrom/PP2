@@ -34,12 +34,11 @@
         <input
           type="text"
           name="username"
-          required
           id="uname-input"
           placeholder="My name is..."
         />
         <div>
-          <button class="submit-name-btn">Enter name!</button>
+          <button onclick="displayName()" class="btn" id="submit-name-btn">Enter name!</button>
         </div>
       </div>
     </section>
@@ -61,15 +60,15 @@
         </button>
       </div>
 
-      <div id="lets-play-button">
+      <div id="lets-play-button" class="btn">
         <button class="lets-play-button">Let's play!</button>
       </div>
     </section>
 
     <section id="game-section">
       <div id="user-area">
-        <div class="character-icon" class="icon">Chosen character icon</div>
-        <div>Username</div>
+        <div class="character-icon" class="icon">User Icon</div>
+        <div id="displayName"></div>
         <div class="score-area">
           <span id="player-score">0</span>
         </div>

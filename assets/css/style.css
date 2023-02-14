@@ -16,7 +16,6 @@ p {
   margin: 0px;;
 }
 
-/* INDEX PAGE */
 /* Presentation area */
 
 h1 {
@@ -48,7 +47,7 @@ h1 {
   margin-top: 1em;
 }
 
-.submit-name-btn {
+#submit-name-btn {
   font-size: 24px;
   font-family: 'Indie Flower', Courier, monospace;
   background-color: white;
@@ -61,6 +60,10 @@ h1 {
 
 
 /* Character area */
+
+/* .character-area {
+  display: none; 
+}*/
 
 .character-area {
   display: flex;
@@ -120,7 +123,11 @@ h1 {
 }
 
 
-/* GAME PAGE */
+/* Game area */
+
+/* #game-section {
+  display: none; 
+}*/
 
 #game-section {
   display: flex;
