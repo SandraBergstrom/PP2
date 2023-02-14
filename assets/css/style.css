@@ -12,6 +12,10 @@ body {
   font-weight: 500;
 }
 
+p {
+  margin: 0px;;
+}
+
 /* INDEX PAGE */
 /* Presentation area */
 
@@ -41,6 +45,18 @@ h1 {
   border-radius: 5px;
   padding: 5px;
   text-align: center;
+  margin-top: 1em;
+}
+
+.submit-name-btn {
+  font-size: 24px;
+  font-family: 'Indie Flower', Courier, monospace;
+  background-color: white;
+  border: none;
+  padding: 15px, 20px;
+  text-align: center;
+  margin-bottom: 2em;
+  margin-top: 1em;
 }
 
 
@@ -55,7 +71,7 @@ h1 {
 #character-buttons {
   display: flex;
   justify-content: center;
-  margin-bottom: 30px;
+  margin: 30px 0;
 }
 
 .lets-play-button {
