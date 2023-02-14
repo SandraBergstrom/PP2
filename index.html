@@ -13,18 +13,30 @@
   </head>
 
   <body>
-    <h1>Welcome!</h1>
+    <header>
+      <h1>Tic Tac Toe</h1>
+    </header>
 
     <!-- Name area -->
 
     <section class="name-area">
       <div id="first-icon-roboto">
-        <img src="assets/images/roboto.png" alt="robot icon" class="roboto-icon">
+        <img
+          src="assets/images/roboto.png"
+          alt="robot icon"
+          class="roboto-icon"
+        />
       </div>
       <div id="presentation">
         <p>My name is Roboto!</p>
         <p>What's your name?</p>
-        <input type="text" name="username" required id="uname-input" placeholder="My name is..."/>
+        <input
+          type="text"
+          name="username"
+          required
+          id="uname-input"
+          placeholder="My name is..."
+        />
       </div>
     </section>
 
@@ -35,20 +47,57 @@
       <!-- Buttons to chose character with icons from https://www.flaticon.com/-->
       <div id="character-buttons">
         <button class="btn" id="unicorn">
-          <img src="assets/images/unicorn.png" alt="unicorn icon">
+          <img src="assets/images/unicorn.png" alt="unicorn icon" />
         </button>
         <button class="btn" id="teddy">
-          <img src="assets/images/teddy-bear.png" alt="teddy bear icon">
+          <img src="assets/images/teddy-bear.png" alt="teddy bear icon" />
         </button>
         <button class="btn" id="dragon">
-          <img src="assets/images/dragon.png" alt="dragon icon">
+          <img src="assets/images/dragon.png" alt="dragon icon" />
         </button>
       </div>
 
       <div id="lets-play-button">
-        <form action="game.html">
-          <input type="submit" value="Let's play Tic Tac Toe!" />
-        </form>
+        <button class="lets-play-button">Let's play!</button>
+      </div>
+    </section>
+
+    <section id="game-section">
+      <div id="user-area">
+        <div class="character-icon" class="icon">Chosen character icon</div>
+        <div>Username</div>
+        <div class="score-area">
+          <span id="player-score">0</span>
+        </div>
+      </div>
+
+      <div id="game-board">
+        <div class="board-box" id="0"></div>
+        <div class="board-box" id="1"></div>
+        <div class="board-box" id="2"></div>
+        <div class="board-box" id="3"></div>
+        <div class="board-box" id="4"></div>
+        <div class="board-box" id="5"></div>
+        <div class="board-box" id="6"></div>
+        <div class="board-box" id="7"></div>
+        <div class="board-box" id="8"></div>
+      </div>
+
+      <div id="roboto-area">
+        <div class="icon">
+          <img
+            src="assets/images/roboto.png"
+            alt="Robot icon"
+            class="roboto-icon"
+            id="robot-player-icon"
+          />
+        </div>
+        <div>
+          <p>Roboto</p>
+        </div>
+        <div class="score-area">
+          <span id="roboto-score">0</span>
+        </div>
       </div>
     </section>
 

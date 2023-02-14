@@ -12,12 +12,12 @@ body {
   font-weight: 500;
 }
 
-/* Index page */
-  /* Presentation area */
+/* INDEX PAGE */
+/* Presentation area */
 
 h1 {
-    font-size: 64px;
-    padding-top: 25px;
+  font-size: 64px;
+  padding-top: 25px;
 }
 
 .name-area {
@@ -44,7 +44,7 @@ h1 {
 }
 
 
-  /* Character area */ 
+/* Character area */
 
 .character-area {
   display: flex;
@@ -58,7 +58,7 @@ h1 {
   margin-bottom: 30px;
 }
 
-#lets-play-button input {
+.lets-play-button {
   font-size: 24px;
   font-family: 'Indie Flower', Courier, monospace;
   background-color: white;
@@ -67,7 +67,7 @@ h1 {
   text-align: center;
 }
 
-  /* Character style */
+/* Character style */
 
 .roboto-icon {
   background-color: #AAB1A9;
@@ -101,4 +101,50 @@ h1 {
 #dragon {
   background-color: #64A6BD;
   border: none;
+}
+
+
+/* GAME PAGE */
+
+#game-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#user-area {
+  display: flex;
+  width: 10em;
+  flex-direction: column;
+  align-items: center;
+}
+
+#game-board {
+  display: flex;
+  width: 10em;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  margin: 2em;
+}
+
+.board-box {
+  height: 3em;
+  width: 3em;
+  border: #3D3D3D 1px solid;
+  border-radius: 5px;
+  margin: 1px;
+}
+
+#roboto-area {
+  display: flex;
+  width: 10em;
+  flex-direction: column;
+  align-items: center;
+}
+
+#robot-player-icon {
+  width: 75px;
+  height: auto;
 }
