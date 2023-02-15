@@ -12,6 +12,7 @@ let dragon = document.querySelector("#dragon");
 let msg = document.querySelector("#msg");
 let msgWin = document.querySelector("#msg-win");
 let boxes = document.querySelectorAll(".board-box");
+
 let currentPlayer = "X";
 let winCombos = [
     [0, 1, 2],
@@ -35,14 +36,13 @@ function displayName() {
 }
 
 /*
-This function is copied from https://www.youtube.com/watch?v=GTLLnF30up4&t=501s and will 
+This function is very inspired from https://www.youtube.com/watch?v=GTLLnF30up4&t=501s and will 
 check if the the latest box that was checked will win
 */
 function checkIfWin() {
     winCombos.forEach(function(combination) {
         let check = combination.every(idx => boxes[idx].innerText.trim() == currentPlayer);
         if(check) {
-            //alert(currentPlayer + "has won");
             msgWin.textContent = `The winner is ${currentPlayer}!`
             msgWin.style.color = "#F6A38E";
         }
@@ -59,4 +59,21 @@ function boxCheck() {
     checkIfWin();
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     robotosTurn();
+    /* if checkWin = False; 
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+    robotosTurn();
+    else
+    playAgain() */
+    
 }
+
+
+function robotosTurn() {
+    let play = 0;
+    do {
+        play = Math.floor(Math.random() * 9);
+    } while (boxes[play].textContent !== "");
+        boxes[play].textContent ="O"
+        checkIfWin();
+        currentPlayer = currentPlayer === "O" ? "X" : "O";
+    }
