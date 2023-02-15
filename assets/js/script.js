@@ -10,8 +10,19 @@ let teddy = document.querySelector("#teddy");
 let dragon = document.querySelector("#dragon");
 
 let msg = document.querySelector("#msg");
-
+let msgWin = document.querySelector("#msg-win");
 let boxes = document.querySelectorAll(".board-box");
+let currentPlayer = "X";
+let winCombos = [
+    [0, 1, 2],
+	[3, 4, 5],
+	[6, 7, 8],
+	[0, 3, 6],
+	[1, 4, 7],
+	[2, 5, 8],
+	[0, 4, 8],
+	[2, 4, 6]
+];
 
 
 
@@ -23,10 +34,29 @@ function displayName() {
     document.getElementById("displayName").innerHTML = username;
 }
 
+/*
+This function is copied from https://www.youtube.com/watch?v=GTLLnF30up4&t=501s and will 
+check if the the latest box that was checked will win
+*/
+function checkIfWin() {
+    winCombos.forEach(function(combination) {
+        let check = combination.every(idx => boxes[idx].innerText.trim() == currentPlayer);
+        if(check) {
+            //alert(currentPlayer + "has won");
+            msgWin.textContent = `The winner is ${currentPlayer}!`
+            msgWin.style.color = "#F6A38E";
+        }
+    });
+}
+
 
 // Puts and "O" to the box clicked on the board
 boxes.forEach((box) => box.addEventListener("click", boxCheck));
 
 function boxCheck() {
-    this.innerHTML = "<h2>O</h2>";
+    if(this.innerText.trim() != "")  return;
+    this.innerText = currentPlayer;
+    checkIfWin();
+    currentPlayer = currentPlayer === "X" ? "O" : "X";
+    robotosTurn();
 }
