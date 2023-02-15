@@ -1,34 +1,24 @@
-document.addEventListener("DOMContentLoaded", function () {
-    let boxes = Array.from(document.getElementsByClassName("board-box"));
-    boxes = Array(9).fill(null);
-
-  });
 
 
-let currentPlayer = "X"
+// Get buttons
+let enterNameBtn = document.querySelector("#submit-name-btn");
+let letsPlayBtn = document.querySelector("#lets-play-button");
+
+// Get characters
+let unicorn = document.querySelector("#unicorn");
+let teddy = document.querySelector("#teddy");
+let dragon = document.querySelector("#dragon");
+
+let msg = document.querySelector("#msg");
+
+let boxes = document.querySelectorAll(".board-box");
+console.log(boxes);
 
 
+enterNameBtn.addEventListener("click", displayName);
+
+// Will get the username and place it on the board. 
 function displayName() {
     let username = document.getElementById("uname-input").value;
     document.getElementById("displayName").innerHTML = username;
-}
-
-function isRobotosTurn() {
-
-}
-
-function clickBox() {
-
-}
-
-function isWin() {
-
-}
-
-function isDraw() {
-
-}
-
-function increaseScore() {
-    
 }

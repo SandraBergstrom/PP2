@@ -31,6 +31,7 @@
         <p>Hello!</p>
         <p>My name is Roboto.</p>
         <p>What's your name?</p>
+        <div id="msg"></div>
         <input
           type="text"
           name="username"
@@ -38,7 +39,7 @@
           placeholder="My name is..."
         />
         <div>
-          <button onclick="displayName()" class="btn" id="submit-name-btn">Enter name!</button>
+          <button class="btn" id="submit-name-btn">Enter name!</button>
         </div>
       </div>
     </section>
@@ -60,8 +61,8 @@
         </button>
       </div>
 
-      <div id="lets-play-button" class="btn">
-        <button class="lets-play-button">Let's play!</button>
+      <div class="lets-play-button" class="btn">
+        <button id="lets-play-button">Let's play!</button>
       </div>
     </section>
 
@@ -75,15 +76,15 @@
       </div>
 
       <div id="game-board">
-        <div class="board-box" id="0" onclick="clickBox()"></div>
-        <div class="board-box" id="1" onclick="clickBox()"></div>
-        <div class="board-box" id="2" onclick="clickBox()"></div>
-        <div class="board-box" id="3" onclick="clickBox()"></div>
-        <div class="board-box" id="4" onclick="clickBox()"></div>
-        <div class="board-box" id="5" onclick="clickBox()"></div>
-        <div class="board-box" id="6" onclick="clickBox()"></div>
-        <div class="board-box" id="7" onclick="clickBox()"></div>
-        <div class="board-box" id="8" onclick="clickBox()"></div>
+        <div class="board-box" id="0"></div>
+        <div class="board-box" id="1"></div>
+        <div class="board-box" id="2"></div>
+        <div class="board-box" id="3"></div>
+        <div class="board-box" id="4"></div>
+        <div class="board-box" id="5"></div>
+        <div class="board-box" id="6"></div>
+        <div class="board-box" id="7"></div>
+        <div class="board-box" id="8"></div>
       </div>
 
       <div id="roboto-area">
