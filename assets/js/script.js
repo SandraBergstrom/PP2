@@ -12,7 +12,7 @@ let dragon = document.querySelector("#dragon");
 let msg = document.querySelector("#msg");
 
 let boxes = document.querySelectorAll(".board-box");
-console.log(boxes);
+
 
 
 enterNameBtn.addEventListener("click", displayName);
@@ -21,4 +21,12 @@ enterNameBtn.addEventListener("click", displayName);
 function displayName() {
     let username = document.getElementById("uname-input").value;
     document.getElementById("displayName").innerHTML = username;
+}
+
+
+// Puts and "O" to the box clicked on the board
+boxes.forEach((box) => box.addEventListener("click", boxCheck));
+
+function boxCheck() {
+    this.innerHTML = "<h2>O</h2>";
 }
