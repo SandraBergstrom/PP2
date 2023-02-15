@@ -33,6 +33,19 @@ enterNameBtn.addEventListener("click", displayName);
 function displayName() {
     let username = document.getElementById("uname-input").value;
     document.getElementById("displayName").innerHTML = username;
+    if (username == "") {
+        alert("No username");
+    } else {
+        let pickCharacter = document.querySelector("#character-area");
+        pickCharacter.style.display = "flex";
+    }
+}
+
+letsPlayBtn.addEventListener("click", letsPlay);
+
+function letsPlay() {
+    let board = document.querySelector("#game-section");
+    board.style.display = "flex";
 }
 
 /*
@@ -43,11 +56,18 @@ function checkIfWin() {
     winCombos.forEach(function(combination) {
         let check = combination.every(idx => boxes[idx].innerText.trim() == currentPlayer);
         if(check) {
-            msgWin.textContent = `The winner is ${currentPlayer}!`
+            msgWin.textContent = `The winner is ${currentPlayer}!`;
             msgWin.style.color = "#F6A38E";
         }
     });
 }
+
+/* /function checkIfDraw() {
+    if (boxes.some(box => box.textContent == "")) {
+        msgWin.textContent = `It's a draw!`;
+        msgWin.style.color = "#F6A38E";
+    }
+} */
 
 
 // Puts and "O" to the box clicked on the board
@@ -58,15 +78,8 @@ function boxCheck() {
     this.innerText = currentPlayer;
     checkIfWin();
     currentPlayer = currentPlayer === "X" ? "O" : "X";
-    robotosTurn();
-    /* if checkWin = False; 
-    currentPlayer = currentPlayer === "X" ? "O" : "X";
-    robotosTurn();
-    else
-    playAgain() */
-    
+    robotosTurn();    
 }
-
 
 function robotosTurn() {
     let play = 0;

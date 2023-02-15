@@ -65,8 +65,8 @@ h1 {
   display: none; 
 }*/
 
-.character-area {
-  display: flex;
+#character-area {
+  display: none;
   flex-direction: column;
   align-items: center;
 }
@@ -125,12 +125,8 @@ h1 {
 
 /* Game area */
 
-/* #game-section {
-  display: none; 
-}*/
-
 #game-section {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
 }
