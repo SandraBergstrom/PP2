@@ -111,16 +111,29 @@ h1 {
   border: none;
 }
 
+#unicorn:hover {
+  border: 2px #ff5da2 solid;
+}
+
 #teddy {
   background-color: #FFF1AD;
   border: none;
   margin: 0 25px;
 }
 
+#teddy:hover {
+  border: 2px #fdde47 solid;
+}
+
 #dragon {
   background-color: #64A6BD;
   border: none;
 }
+
+#dragon:hover {
+  border: 2px #0a90bf solid;
+}
+
 
 
 /* Game area */
@@ -154,6 +167,8 @@ h1 {
   border: #3D3D3D 1px solid;
   border-radius: 5px;
   margin: 1px;
+  text-align: center;
+  line-height: 3em;
 }
 
 #roboto-area {
