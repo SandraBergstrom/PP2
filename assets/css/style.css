@@ -149,6 +149,13 @@ h1 {
 
 /* Game area */
 
+#game-msg {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 #game-section {
   display: none;
   align-items: center;
