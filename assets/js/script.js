@@ -52,7 +52,7 @@ function letsPlay() {
 }
 
 /*
-This function is very inspired from https://www.youtube.com/watch?v=GTLLnF30up4&t=501s and will 
+First part of this function is very inspired from https://www.youtube.com/watch?v=GTLLnF30up4&t=501s and will 
 check if the the latest box that was checked will win
 */
 function checkIfWin() {
@@ -63,8 +63,24 @@ function checkIfWin() {
     if (check) {
       msgWin.textContent = `The winner is ${currentPlayer}!`;
       msgWin.style.color = "#F6A38E";
+      let winner = `${currentPlayer}`;
+        if (winner === "X") {
+            increasePlayerScore();
+        } else if (winner === "O") {
+            increaseRobotoScore();
+        }
     }
   });
+}
+
+function increasePlayerScore() {
+    let oldScore = parseInt(document.querySelector("#player-score").innerText);
+    document.querySelector("#player-score").innerText = ++oldScore;
+}
+
+function increaseRobotoScore() {
+    let oldScoreRoboto = parseInt(document.querySelector("#roboto-score").innerText);
+    document.querySelector("#roboto-score").innerText = ++oldScoreRoboto;
 }
 
 /* /function checkIfDraw() {
