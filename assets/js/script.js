@@ -29,7 +29,7 @@ enterNameBtn.addEventListener("click", displayName);
 function displayName() {
     let username = document.getElementById("uname-input").value;
     document.getElementById("displayName").innerHTML = username;
-    if (username == "") {
+    if (username.trim() == "") {
         msgWin.textContent = `Please let me know your name!`;
         msgWin.style.color = "#F6A38E";
         setTimeout(eraseName, 3000);
@@ -37,7 +37,7 @@ function displayName() {
         let pickCharacter = document.querySelector("#character-area");
         pickCharacter.style.display = "flex";
     }
-    setTimeout(noName, 2000);
+   // setTimeout(noName, 2000);
 
     function eraseName() {
         msgWin.style.color = "white";
@@ -45,7 +45,7 @@ function displayName() {
 }
 
 // Will pick the unicorn character and show the game section
-/*unicorn.addEventListener("click", letsPlayUnicorn);
+unicorn.addEventListener("click", letsPlayUnicorn);
 
 function letsPlayUnicorn() {
     let board = document.querySelector("#game-section");
@@ -57,7 +57,7 @@ function letsPlayUnicorn() {
             src = "assets/images/unicorn.png" 
             alt = "unicorn icon" 
             style = "
-                height: 75 px;
+                width: 75px;
                 background-color: #FDB0D1;
                 border: none;
                 height: auto;
@@ -66,7 +66,7 @@ function letsPlayUnicorn() {
             "
         />
     `
-}*/
+}
 
 
 // Will show the game section
@@ -102,6 +102,7 @@ function checkIfWin() {
 
 function playAgain() {
     letsPlayBtn.innerText = "Play again!";
+    
 }
 
 
