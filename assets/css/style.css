@@ -40,8 +40,8 @@ h1 {
 #uname-input {
   font-size: 24px;
   font-family: 'Indie Flower', Courier, monospace;
-  border: #F6A38E 2px solid;
-  border-radius: 5px;
+  border: none;
+  border-bottom: #3D3D3D 1px solid;
   padding: 5px;
   text-align: center;
   margin-top: 1em;
@@ -50,8 +50,10 @@ h1 {
 #submit-name-btn {
   font-size: 24px;
   font-family: 'Indie Flower', Courier, monospace;
+  color: #F6A38E;
   background-color: white;
-  border: none;
+  border: #F6A38E 2px solid;
+  border-radius: 5px;
   padding: 15px, 20px;
   text-align: center;
   margin-bottom: 2em;

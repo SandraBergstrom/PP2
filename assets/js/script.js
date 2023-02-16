@@ -138,16 +138,14 @@ function checkIfWin() {
       (idx) => boxes[idx].innerText.trim() == currentPlayer
     );
     if (check) {
-        msg
-      /*msgWin.textContent = `The winner is ${currentPlayer}!`;
-      msgWin.style.color = "#F6A38E";*/
-        
-      //let playAgainBtn = document.querySelector("#lets-play-button");
+      msgWin.textContent = `The winner is ${currentPlayer}!`;
+      msgWin.style.color = "#F6A38E";
       letsPlayBtn.innerText = "Play again!"
       letsPlayBtn.style.backgroundColor = "#F6A38E";
       letsPlayBtn.style.borderRadius = "5px";
       letsPlayBtn.style.padding = "10px 15px";
       letsPlayBtn.style.color = "white";
+      
       let winner = `${currentPlayer}`;
       if (winner === "X") {
         increasePlayerScore();
@@ -165,9 +163,7 @@ function increasePlayerScore() {
 }
 
 function increaseRobotoScore() {
-  let oldScoreRoboto = parseInt(
-    document.querySelector("#roboto-score").innerText
-  );
+  let oldScoreRoboto = parseInt(document.querySelector("#roboto-score").innerText);
   document.querySelector("#roboto-score").innerText = ++oldScoreRoboto;
 }
 
@@ -191,7 +187,7 @@ function boxCheck() {
 
 // Makes Roboto play
 function robotosTurn() {
-  let play = 0;
+  let play = -1;
   do {
     play = Math.floor(Math.random() * 9);
   } while (boxes[play].textContent !== "");
