@@ -149,6 +149,8 @@ function playAgain() {
     letsPlayBtn.innerText = "Let's play!";
     letsPlayBtn.style.backgroundColor = "white";
     letsPlayBtn.style.color = "#F6A38E";
+    letsPlayBtn.style.fontSize = "32px"
+    msgWin.style.color = "white";
     boxes.forEach((box) => {
         box.innerText = "";
     });
@@ -169,6 +171,7 @@ function checkIfWin() {
             letsPlayBtn.style.borderRadius = "5px";
             letsPlayBtn.style.padding = "10px 15px";
             letsPlayBtn.style.color = "white";
+            letsPlayBtn.style.fontSize = "24px"
 
             let winner = `${currentPlayer}`;
             if (winner === "X") {

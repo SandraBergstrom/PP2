@@ -89,16 +89,6 @@ h1 {
   text-align: center;
 }
 
-/* #play-again-button {
-  display: none;
-  font-size: 24px;
-  font-family: 'Indie Flower', Courier, monospace;
-  background-color: white;
-  border: none;
-  padding: 15px, 20px;
-  text-align: center;
-} */
-
 /* Character style */
 
 .roboto-icon {
@@ -203,11 +193,36 @@ h1 {
   height: auto;
 }
 
-
-
 #msg-win {
   color: white;
   font-weight: 700;
   font-size: 30px;
-  margin-top: 25px;
 }
+
+
+/* MEDIA QUERIES */ 
+
+    /* On screens that are 1050 px or less - pricelist will center */
+  @media screen and (max-width: 450px) {
+    #name-area {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    h1 {
+      font-size: 48px;
+    }
+    #game-section {
+      flex-direction: column;
+    }
+    .btn img {
+      width: 50px;
+    }
+    #teddy {
+      margin: 0 7px;
+    }
+    #game-msg {
+      margin-bottom: 10px;
+    }
+  }
