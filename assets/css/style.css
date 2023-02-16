@@ -23,7 +23,7 @@ h1 {
   padding-top: 25px;
 }
 
-.name-area {
+#name-area {
   display: flex;
   align-items: flex-start;
   justify-content: center;
