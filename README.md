@@ -13,9 +13,10 @@ Design
 - HTML No errors or warnings were returned when passing through [the official W3C validator](https://validator.w3.org/)
 
 ## Bugs
-- Draw function is not working. 
+
 
 ### Fixed bugs:
+- Draw function is not working. Worked it out by creating isFilled() that checks if all boxes are full. Then added else if to checkIfWin() and return a draw if true.  
 
 ## Deployment
 

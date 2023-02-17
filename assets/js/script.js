@@ -163,7 +163,7 @@ function checkIfWin() {
             (i) => boxes[i].innerText.trim() == currentPlayer
         );
         if (check) {
-            msgWin.textContent = `The winner is ${currentPlayer}!`;
+            //msgWin.textContent = `The winner is ${currentPlayer}!`;
             msgWin.style.color = "#F6A38E";
             letsPlayBtn.innerText = "Play again!";
             letsPlayBtn.style.backgroundColor = "#F6A38E";
@@ -175,34 +175,22 @@ function checkIfWin() {
             let winner = `${currentPlayer}`;
             if (winner === "X") {
                 increasePlayerScore();
+                let username = document.getElementById("uname-input").value;
+                msgWin.textContent = `The winner is ${username}!`;
             } else if (winner === "O") {
                 increaseRobotoScore();
-            }
-        } else if (isFilled) {
+                msgWin.textContent = `The winner is Roboto!`;
+            } 
+        else if (isFilled()) {
             msgWin.textContent = `It's a draw!`;
+        } 
         } 
     });
 }
 
-let isFilled = (boxes) => {
-     return array.from(boxes).every(box => box.textContent !== "");
+let isFilled = () => {
+     return Array.from(boxes).every(box => box.textContent !== "");
 }
-
-/* function boxesFull () {
-    for (i = 0; i < boxes.length; i++) {
-        if (boxes[i].innertext.trim() === "") {
-            return false;
-        } 
-    } 
-    return true;
-} */ 
-
-
-/* if (there is a match found):
-    declare a winner
-else if (no boxes are empty):
-    declare a draw */
-
 
 // Below functions will increase winners score
 function increasePlayerScore() {
@@ -225,7 +213,7 @@ function boxCheck() {
     this.innerText = currentPlayer;
     checkIfWin();
     currentPlayer = currentPlayer === "X" ? "O" : "X";
-    robotosTurn();
+    robotosTurn(); 
 }
 
 // Makes Roboto play
