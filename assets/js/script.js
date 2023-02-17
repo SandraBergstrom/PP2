@@ -85,7 +85,6 @@ function letsPlayUnicorn() {
 teddy.addEventListener("click", letsPlayTeddy);
 
 function letsPlayTeddy() {
-    console.log("letsPlayTeddy - triggered");
     let board = document.querySelector("#game-section");
     board.style.display = "flex";
 
@@ -162,13 +161,11 @@ function playAgain() {
 // Will check if the the latest box that was checked will win
 
 function checkIfWin() {
-    console.log("checkIfWin - triggered");
     winCombos.forEach(function (combination) {
         let check = combination.every(
             (i) => boxes[i].innerText.trim() == currentPlayer
         );
         if (check) {
-            //msgWin.textContent = `The winner is ${currentPlayer}!`;
             msgWin.style.color = "#F6A38E";
             letsPlayBtn.innerText = "Play again!";
             letsPlayBtn.style.backgroundColor = "#F6A38E";
