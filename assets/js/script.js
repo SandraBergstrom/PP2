@@ -10,6 +10,7 @@ let dragon = document.querySelector("#dragon");
 let msgName = document.querySelector("#msg-name");
 let msgWin = document.querySelector("#msg-win");
 let boxes = document.querySelectorAll(".board-box");
+let turnCounter = 0;
 
 let currentPlayer = "X";
 let winCombos = [
@@ -84,6 +85,7 @@ function letsPlayUnicorn() {
 teddy.addEventListener("click", letsPlayTeddy);
 
 function letsPlayTeddy() {
+    console.log("letsPlayTeddy - triggered");
     let board = document.querySelector("#game-section");
     board.style.display = "flex";
 
@@ -147,17 +149,20 @@ function playAgain() {
     letsPlayBtn.innerText = "Let's play!";
     letsPlayBtn.style.backgroundColor = "white";
     letsPlayBtn.style.color = "#F6A38E";
-    letsPlayBtn.style.fontSize = "32px"
+    letsPlayBtn.style.fontSize = "32px";
     msgWin.style.color = "white";
     boxes.forEach((box) => {
         box.innerText = "";
     });
+    turnCounter = 0;
+    currentPlayer = "X";
     
 }
 
 // Will check if the the latest box that was checked will win
 
 function checkIfWin() {
+    console.log("checkIfWin - triggered");
     winCombos.forEach(function (combination) {
         let check = combination.every(
             (i) => boxes[i].innerText.trim() == currentPlayer
@@ -170,27 +175,35 @@ function checkIfWin() {
             letsPlayBtn.style.borderRadius = "5px";
             letsPlayBtn.style.padding = "10px 15px";
             letsPlayBtn.style.color = "white";
-            letsPlayBtn.style.fontSize = "24px"
+            letsPlayBtn.style.fontSize = "24px";
 
             let winner = `${currentPlayer}`;
             if (winner === "X") {
                 increasePlayerScore();
                 let username = document.getElementById("uname-input").value;
                 msgWin.textContent = `The winner is ${username}!`;
+                // turnCounter = ++1;
             } else if (winner === "O") {
                 increaseRobotoScore();
                 msgWin.textContent = `The winner is Roboto!`;
+                // turnCounter = ++1;
             } 
-        else if (isFilled()) {
+        } else if (isFilled()) {
             msgWin.textContent = `It's a draw!`;
-        } 
+            msgWin.style.color = "#F6A38E";
+            letsPlayBtn.innerText = "Play again!";
+            letsPlayBtn.style.backgroundColor = "#F6A38E";
+            letsPlayBtn.style.borderRadius = "5px";
+            letsPlayBtn.style.padding = "10px 15px";
+            letsPlayBtn.style.color = "white";
+            letsPlayBtn.style.fontSize = "24px";
         } 
     });
 }
 
 let isFilled = () => {
      return Array.from(boxes).every(box => box.textContent !== "");
-}
+};
 
 // Below functions will increase winners score
 function increasePlayerScore() {
@@ -199,9 +212,7 @@ function increasePlayerScore() {
 }
 
 function increaseRobotoScore() {
-    let oldScoreRoboto = parseInt(
-        document.querySelector("#roboto-score").innerText
-    );
+    let oldScoreRoboto = parseInt(document.querySelector("#roboto-score").innerText);
     document.querySelector("#roboto-score").innerText = ++oldScoreRoboto;
 }
 
@@ -213,11 +224,15 @@ function boxCheck() {
     this.innerText = currentPlayer;
     checkIfWin();
     currentPlayer = currentPlayer === "X" ? "O" : "X";
-    robotosTurn(); 
+    turnCounter++;
+    if(turnCounter < 9){
+        robotosTurn(); 
+    }
 }
 
 // Makes Roboto play
 function robotosTurn() {
+    turnCounter++;
     let play = -1;
     do {play = Math.floor(Math.random() * 9);} 
     while (boxes[play].textContent !== "");
