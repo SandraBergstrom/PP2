@@ -23,9 +23,7 @@ let winCombos = [
     [2, 4, 6],
 ];
 
-document
-    .querySelector("#uname-input")
-    .addEventListener("keydown", function (event) {
+document.querySelector("#uname-input").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             displayName();
         }
@@ -180,9 +178,31 @@ function checkIfWin() {
             } else if (winner === "O") {
                 increaseRobotoScore();
             }
-        }
+        } else if (isFilled) {
+            msgWin.textContent = `It's a draw!`;
+        } 
     });
 }
+
+let isFilled = (boxes) => {
+     return array.from(boxes).every(box => box.textContent !== "");
+}
+
+/* function boxesFull () {
+    for (i = 0; i < boxes.length; i++) {
+        if (boxes[i].innertext.trim() === "") {
+            return false;
+        } 
+    } 
+    return true;
+} */ 
+
+
+/* if (there is a match found):
+    declare a winner
+else if (no boxes are empty):
+    declare a draw */
+
 
 // Below functions will increase winners score
 function increasePlayerScore() {
@@ -195,14 +215,6 @@ function increaseRobotoScore() {
         document.querySelector("#roboto-score").innerText
     );
     document.querySelector("#roboto-score").innerText = ++oldScoreRoboto;
-}
-
-
-function checkIfDraw() {
-    if (!boxes == "") {
-        msgWin.textContent = `It's a draw!`;
-        msgWin.style.color = "#F6A38E";
-    }
 }
 
 // Puts and "O" to the box clicked on the board and then make it Robotos turn
@@ -219,9 +231,8 @@ function boxCheck() {
 // Makes Roboto play
 function robotosTurn() {
     let play = -1;
-    do {
-        play = Math.floor(Math.random() * 9);
-    } while (boxes[play].textContent !== "");
+    do {play = Math.floor(Math.random() * 9);} 
+    while (boxes[play].textContent !== "");
     boxes[play].textContent = "O";
     checkIfWin();
     currentPlayer = currentPlayer === "O" ? "X" : "O";
