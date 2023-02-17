@@ -5,6 +5,8 @@ Welcome to Tic Tac Toe, a simple and fun game designed for kids aged 4 and up. O
 Tic Tac Toe is not only an entertaining game but also a valuable educational tool. It teaches kids how to think ahead, make decisions, and solve problems in a fun and engaging way. Whether you're a parent looking for a way to keep your child entertained and educated, or a teacher seeking a classroom activity, Tic Tac Toe is an excellent choice. 
 Design
 
+![Responsive](/assets/images/readme/responsive.jpg)
+
 ## Features
 ### Existing Features
 #### Logo
