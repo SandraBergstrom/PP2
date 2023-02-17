@@ -36,7 +36,7 @@ enterNameBtn.addEventListener("click", displayName);
 
 function displayName() {
     let username = document.getElementById("uname-input").value;
-    document.getElementById("displayName").innerHTML = username;
+    document.getElementById("displayName").innerHTML = `<h2>${username}</h2>`;
     if (username.trim() == "") {
         msgName.textContent = `Please let me know your name!`;
         msgName.style.color = "#F6A38E";
@@ -162,7 +162,7 @@ function playAgain() {
 function checkIfWin() {
     winCombos.forEach(function (combination) {
         let check = combination.every(
-            (idx) => boxes[idx].innerText.trim() == currentPlayer
+            (i) => boxes[i].innerText.trim() == currentPlayer
         );
         if (check) {
             msgWin.textContent = `The winner is ${currentPlayer}!`;
@@ -212,7 +212,6 @@ function boxCheck() {
     if (this.innerText.trim() != "") return;
     this.innerText = currentPlayer;
     checkIfWin();
-    checkIfDraw()
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     robotosTurn();
 }
@@ -225,6 +224,5 @@ function robotosTurn() {
     } while (boxes[play].textContent !== "");
     boxes[play].textContent = "O";
     checkIfWin();
-    checkIfDraw()
     currentPlayer = currentPlayer === "O" ? "X" : "O";
 }
