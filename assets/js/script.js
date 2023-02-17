@@ -154,6 +154,7 @@ function playAgain() {
     boxes.forEach((box) => {
         box.innerText = "";
     });
+    
 }
 
 // Will check if the the latest box that was checked will win
@@ -196,12 +197,13 @@ function increaseRobotoScore() {
     document.querySelector("#roboto-score").innerText = ++oldScoreRoboto;
 }
 
-/* /function checkIfDraw() {
-    if (boxes.some(box => box.textContent == "")) {
+
+function checkIfDraw() {
+    if (!boxes == "") {
         msgWin.textContent = `It's a draw!`;
         msgWin.style.color = "#F6A38E";
     }
-} */
+}
 
 // Puts and "O" to the box clicked on the board and then make it Robotos turn
 boxes.forEach((box) => box.addEventListener("click", boxCheck));
@@ -210,6 +212,7 @@ function boxCheck() {
     if (this.innerText.trim() != "") return;
     this.innerText = currentPlayer;
     checkIfWin();
+    checkIfDraw()
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     robotosTurn();
 }
@@ -222,5 +225,6 @@ function robotosTurn() {
     } while (boxes[play].textContent !== "");
     boxes[play].textContent = "O";
     checkIfWin();
+    checkIfDraw()
     currentPlayer = currentPlayer === "O" ? "X" : "O";
 }
