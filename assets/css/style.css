@@ -53,10 +53,13 @@ h2 {
 }
 
 #submit-name-btn {
+  width: 100%;
   font-size: 24px;
   font-family: 'Indie Flower', Courier, monospace;
-  color: #F6A38E;
-  background-color: white;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: white;
+  background-color: #F6A38E;
   border: #F6A38E 2px solid;
   border-radius: 5px;
   padding: 15px 20px;
