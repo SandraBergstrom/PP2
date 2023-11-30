@@ -41,8 +41,11 @@ function displayName() {
         msgName.style.color = "#F6A38E";
         setTimeout(eraseName, 3000);
     } else {
+        // Show pick Character section and hide name section. 
         let pickCharacter = document.querySelector("#character-area");
         pickCharacter.style.display = "flex";
+        let nameArea = document.querySelector("#name-area");
+        nameArea.style.display = "none";
     }
 
     function eraseName() {
