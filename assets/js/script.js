@@ -228,6 +228,8 @@ function boxCheck() {
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     turnCounter++;
     if(turnCounter < 9){
+        // make it impossible to click in any box
+        boxes.forEach((box) => box.removeEventListener("click", boxCheck));
         // wait 2 seconds before playing
         setTimeout(function () {
         robotosTurn();
@@ -245,4 +247,6 @@ function robotosTurn() {
     boxes[play].textContent = "O";
     checkIfWin();
     currentPlayer = currentPlayer === "O" ? "X" : "O";
+    // make it possible to click empty boxes again
+    boxes.forEach((box) => box.addEventListener("click", boxCheck));
 }
