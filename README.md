@@ -107,21 +107,24 @@ All user stories have been tested and approved.
 
 
 ## Bugs
-No know bugs. 
+| **Bug** | **Status** |
+| ----------- | ----------- |
+| Last box is still clickable when there has been a draw declared. | |
+|||
+-  
 
 ### Fixed bugs:
-- After draw it only playes with "O". 
-    - I had to reset currentPlayer to "X" after draw. 
-- Last box is not clickable and crashes the game. 
-    - After debugging it turned out to be the robotosTurn() that was causing problems. I had to create a turn tracker and make robotosTurn if the counter is left than 9.
-- Draw function is not working.  
-    - Had to re-write it all and made a new function to call within the checkIfWin().
-- When chosen character is picked and moved to game board the size will not change. 
-    - I had to use ` instaead of ". 
-- Time out to name validation is not working. 
-    - I placed it inside of the displayName() instaed of ouytside. 
-- Roboto steels turn after a win. 
-    - Remove the playAgain() from checkIfWin(). 
+| **Bug** | **Status** |
+| ----------- | ----------- |
+|After draw it only playes with "O". | I had to reset currentPlayer to "X" after draw. |
+|Last box is not clickable and crashes the game. |After debugging it turned out to be the robotosTurn() that was causing problems. I had to create a turn tracker and make robotosTurn if the counter is left than 9.|
+|Draw function is not working. |Had to re-write it all and made a new function to call within the checkIfWin().|
+|When chosen character is picked and moved to game board the size will not change.|I had to use ` instaead of ".|
+|Time out to name validation is not working. |I placed it inside of the displayName() instaed of ouytside.|
+|Roboto steels turn after a win.|Remove the playAgain() from checkIfWin(). |
+|Last box needs to be clicked to show draw. |In the isFilled variable I changed from checking if all boxes where filled to check if 8 boxes are filled to be able to check for a draw after 8th turn.|
+|Player can click boxes even when it's Robotos turn.|Removed the click eventlistener after the player has clicked an empty box. Then I add the eventlistener again when Roboto has played its turn|
+|||
 
 ## Deployment
 To deploy the site on Github Pages, the following steps were taken:
