@@ -139,7 +139,7 @@ All user stories have been tested and approved.
 | **Bug** | **Status** |
 | ----------- | ----------- |
 | Last box is still clickable when there has been a draw declared. | |
-|||
+|Robot playes again even if player wins||
 
 ### Fixed bugs:
 | **Bug** | **Status** |
