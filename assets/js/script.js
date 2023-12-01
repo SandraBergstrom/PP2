@@ -220,19 +220,26 @@ function increaseRobotoScore() {
 boxes.forEach((box) => box.addEventListener("click", boxCheck));
 
 function boxCheck() {
+    // If the box is already filled
+    if (this.innerText.trim() != "") return;
+
     if (this.innerText.trim() != "") return;
     this.innerText = currentPlayer;
     checkIfWin();
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     turnCounter++;
     if(turnCounter < 9){
-        robotosTurn(); 
+        // wait 2 seconds before playing
+        setTimeout(function () {
+        robotosTurn();
+        }, 1000); 
     }
 }
 
-// Makes Roboto play
+// Makes Roboto play 
 function robotosTurn() {
     turnCounter++;
+    
     let play = -1;
     do {play = Math.floor(Math.random() * 9);} 
     while (boxes[play].textContent !== "");
