@@ -24,6 +24,9 @@ let winCombos = [
     [2, 4, 6],
 ];
 
+// Flag game over to not run the robotosTurn function
+let gameOver = false;
+
 document.querySelector("#uname-input").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
             displayName();
@@ -153,6 +156,7 @@ function playAgain() {
     letsPlayBtn.style.color = "#F6A38E";
     letsPlayBtn.style.fontSize = "32px";
     msgWin.style.color = "white";
+    gameOver = false;
     boxes.forEach((box) => {
         box.innerText = "";
     });
@@ -161,8 +165,7 @@ function playAgain() {
     
 }
 
-// Will check if the the latest box that was checked will win
-
+// Check if the the latest box that was checked will win or be a draw
 function checkIfWin() {
     winCombos.forEach(function (combination) {
         let check = combination.every(
@@ -182,10 +185,14 @@ function checkIfWin() {
                 increasePlayerScore();
                 let username = document.getElementById("uname-input").value;
                 msgWin.textContent = `The winner is ${username}!`;
+                gameOver = true; // Set gameOver to true
+                return true;
                 // turnCounter = ++1;
             } else if (winner === "O") {
                 increaseRobotoScore();
                 msgWin.textContent = `The winner is Roboto!`;
+                gameOver = true; // Set gameOver to true
+                return true;
                 // turnCounter = ++1;
             } 
         } else if (isFilled()) {
@@ -199,6 +206,8 @@ function checkIfWin() {
             letsPlayBtn.style.fontSize = "24px";
         } 
     });
+    // If there's no winner, return false
+    return false;
 }
 
 let isFilled = () => {
@@ -224,10 +233,13 @@ function boxCheck() {
     if (this.innerText.trim() != "") return;
 
     this.innerText = currentPlayer;
-    checkIfWin();
+    if (checkIfWin()) {
+        gameOver = true;
+        return;
+    }
     currentPlayer = currentPlayer === "X" ? "O" : "X";
     turnCounter++;
-    if(turnCounter < 9){
+    if(turnCounter < 9 && !gameOver){
         // make it impossible to click in any box
         boxes.forEach((box) => box.removeEventListener("click", boxCheck));
         // wait 2 seconds before playing
@@ -239,8 +251,8 @@ function boxCheck() {
 
 // Makes Roboto play 
 function robotosTurn() {
+    if (gameOver) return;
     turnCounter++;
-    
     let play = -1;
     do {play = Math.floor(Math.random() * 9);} 
     while (boxes[play].textContent !== "");
