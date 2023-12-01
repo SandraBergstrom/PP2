@@ -7,6 +7,29 @@ Welcome to Tic Tac Toe, a simple and fun game designed for kids aged 4 and up. O
 Tic Tac Toe is not only an entertaining game but also a valuable educational tool. It teaches kids how to think ahead, make decisions, and solve problems in a fun and engaging way. Whether you're a parent looking for a way to keep your child entertained and educated, or a teacher seeking a classroom activity, Tic Tac Toe is an excellent choice. 
 Design
 
+## Table of Contents
+- [Tic tac toe!](#tic-tac-toe-)
+  * [User Experience (UX)](#user-experience--ux-)
+    + [User Stories](#user-stories)
+    + [Design](#design)
+    + [Wireframes](#wireframes)
+  * [Technologies used](#technologies-used)
+    + [Languages](#languages)
+    + [Programs used](#programs-used)
+  * [Features](#features)
+    + [Existing Features](#existing-features)
+      - [Logo](#logo)
+      - [Name area](#name-area)
+      - [Character area](#character-area)
+      - [Game board](#game-board)
+  * [Testing](#testing)
+    + [Validator Testing](#validator-testing)
+    + [User Stories Testing (Approved)](#user-stories-testing--approved-)
+  * [Bugs](#bugs)
+    + [Fixed bugs:](#fixed-bugs-)
+  * [Deployment](#deployment)
+  * [Credits](#credits)
+
 ![Responsive](/assets/images/readme/responsive.jpg)
 
 ## User Experience (UX)
@@ -26,6 +49,8 @@ The colorscheme has been carefully selected to be light and pastel, with shades 
 ![Wireframe welcome page](/assets/images/readme/wf-welcome.jpg) <br>
 ![Wireframe of game area](/assets/images/readme/wf-game.jpg) <br>
 
+[Back up](#table-of-content)
+
 ## Technologies used
 
 ### Languages
@@ -40,6 +65,8 @@ The following technologies were used in the development of this project:
 - GitHub: A web-based hosting service used for version control and storing the project's code after being pushed from Gitpod.
 - Photoshop: A raster graphics editor used for resizing and editing icons for the project.
 - Balsamiq: A wireframing tool that was used to create wireframes during the design process.
+
+[Back up](#table-of-content)
 
 ## Features
 ### Existing Features
@@ -66,6 +93,7 @@ Message appear to announce the winner. <br>
 Or if it's a draw. <br>
 ![Draw](/assets/images/readme/draw.jpg) <br>
 
+[Back up](#table-of-content)
 
 ## Testing
 To demonstrate the thoroughness of the testing conducted on the Tic Tac Toe game for kids, the following validation tests were carried out:
@@ -105,13 +133,13 @@ In addition to these validation tests, the game was also extensively tested by a
 
 All user stories have been tested and approved.
 
+[Back up](#table-of-content)
 
 ## Bugs
 | **Bug** | **Status** |
 | ----------- | ----------- |
 | Last box is still clickable when there has been a draw declared. | |
 |||
--  
 
 ### Fixed bugs:
 | **Bug** | **Status** |
@@ -126,6 +154,8 @@ All user stories have been tested and approved.
 |Player can click boxes even when it's Robotos turn.|Removed the click eventlistener after the player has clicked an empty box. Then I add the eventlistener again when Roboto has played its turn|
 |||
 
+[Back up](#table-of-content)
+
 ## Deployment
 To deploy the site on Github Pages, the following steps were taken:
 
@@ -134,6 +164,8 @@ To deploy the site on Github Pages, the following steps were taken:
 3. Selected the Master Branch as the source from the dropdown list in the source section
 4. The page was automatically updated, providing a link with the latest deployment information.
 5. This process ensured the seamless deployment of the site on Github Pages for public access.
+
+[Back up](#table-of-content)
 
 ## Credits
 Special thanks to my mentor, who encouraged gave me some tips and tricks to get my head around Javascript. 
@@ -154,3 +186,5 @@ The following websites have inspired me and helped me solve some issues:
 Icons in the footer is from [Fontawesome](https://fontawesome.com/)
 
 Fonts is taken from [Google Fonts](https://fonts.google.com/)
+
+[Back up](#table-of-content)
