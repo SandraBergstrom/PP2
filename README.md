@@ -139,7 +139,7 @@ All user stories have been tested and approved.
 | **Bug** | **Status** |
 | ----------- | ----------- |
 | Last box is still clickable when there has been a draw declared. | |
-|Robot playes again even if player wins||
+|||
 
 ### Fixed bugs:
 | **Bug** | **Status** |
@@ -152,6 +152,7 @@ All user stories have been tested and approved.
 |Roboto steels turn after a win.|Remove the playAgain() from checkIfWin(). |
 |Last box needs to be clicked to show draw. |In the isFilled variable I changed from checking if all boxes where filled to check if 8 boxes are filled to be able to check for a draw after 8th turn.|
 |Player can click boxes even when it's Robotos turn.|Removed the click eventlistener after the player has clicked an empty box. Then I add the eventlistener again when Roboto has played its turn|
+|Robot playes again even if player wins|Implemented a gameOver flag that is set to true when a player wins. Checked this flag at the start of robotosTurn() and returned immediately if gameOver is true. This prevents Roboto from taking its turn after the player wins.|
 |||
 
 [Back up](#table-of-content)
