@@ -202,7 +202,7 @@ function checkIfWin() {
 }
 
 let isFilled = () => {
-     return Array.from(boxes).every(box => box.textContent !== "");
+    return Array.from(boxes).filter(box => box.textContent !== "").length === 8;
 };
 
 // Below functions will increase winners score
