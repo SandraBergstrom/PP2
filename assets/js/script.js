@@ -223,7 +223,6 @@ function boxCheck() {
     // If the box is already filled
     if (this.innerText.trim() != "") return;
 
-    if (this.innerText.trim() != "") return;
     this.innerText = currentPlayer;
     checkIfWin();
     currentPlayer = currentPlayer === "X" ? "O" : "X";
