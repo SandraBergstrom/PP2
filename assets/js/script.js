@@ -151,11 +151,11 @@ function letsPlayDragon() {
 letsPlayBtn.addEventListener("click", playAgain);
 
 function playAgain() {
-    letsPlayBtn.innerText = "Let's play!";
+    msgWin.innerHTML = "<h2>Let's play!</h2>";
     letsPlayBtn.style.backgroundColor = "white";
-    letsPlayBtn.style.color = "#F6A38E";
-    letsPlayBtn.style.fontSize = "32px";
-    msgWin.style.color = "white";
+    msgWin.style.color = "#F6A38E";
+    msgWin.style.fontSize = "48px";
+    // msgWin.style.color = "white";
     gameOver = false;
     boxes.forEach((box) => {
         box.innerText = "";
