@@ -159,10 +159,10 @@ function playAgain() {
     gameOver = false;
     boxes.forEach((box) => {
         box.innerText = "";
+        box.addEventListener("click", boxCheck);
     });
     turnCounter = 0;
     currentPlayer = "X";
-    
 }
 
 // Check if the the latest box that was checked will win or be a draw
@@ -196,6 +196,9 @@ function checkIfWin() {
                 // turnCounter = ++1;
             } 
         } else if (isFilled()) {
+            // make it impossible to click in any box
+            boxes.forEach((box) => box.removeEventListener("click", boxCheck));
+            gameOver = true; // Set gameOver to true
             msgWin.textContent = `It's a draw!`;
             msgWin.style.color = "#F6A38E";
             letsPlayBtn.innerText = "Play again!";
@@ -204,6 +207,7 @@ function checkIfWin() {
             letsPlayBtn.style.padding = "10px 15px";
             letsPlayBtn.style.color = "white";
             letsPlayBtn.style.fontSize = "24px";
+            
         } 
     });
     // If there's no winner, return false
@@ -230,7 +234,7 @@ boxes.forEach((box) => box.addEventListener("click", boxCheck));
 
 function boxCheck() {
     // If the box is already filled
-    if (this.innerText.trim() != "") return;
+    if (this.innerText.trim() !== "" || gameOver) return;
 
     this.innerText = currentPlayer;
     if (checkIfWin()) {
