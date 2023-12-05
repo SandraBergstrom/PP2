@@ -8,7 +8,7 @@ body {
   font-family: 'Indie Flower', Courier, monospace;
   color: #3D3D3D;
   text-align: center;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: 500;
 }
 
@@ -19,19 +19,20 @@ p {
 /* Presentation area */
 
 h1 {
-  font-size: 64px;
+  font-size: 48px;
   padding-top: 25px;
 }
 
 h2 {
   margin: 0px;
-  font-size: 24px;
+  font-size: 20px;
 }
 
 #name-area {
   display: flex;
-  align-items: flex-start;
+  align-items: fcenter;
   justify-content: center;
+  flex-direction: column;
 }
 
 #first-icon-roboto {
@@ -43,7 +44,7 @@ h2 {
 }
 
 #uname-input {
-  font-size: 24px;
+  font-size: 18px;
   font-family: 'Indie Flower', Courier, monospace;
   border: none;
   border-bottom: #3D3D3D 1px solid;
@@ -54,7 +55,7 @@ h2 {
 
 #submit-name-btn {
   width: 100%;
-  font-size: 24px;
+  font-size: 18px;
   font-family: 'Indie Flower', Courier, monospace;
   font-weight: 700;
   letter-spacing: 2px;
@@ -84,7 +85,7 @@ h2 {
 #character-buttons {
   display: flex;
   justify-content: center;
-  margin: 30px 0;
+  margin: 20px 0;
 }
 
 #lets-play-button {
@@ -112,9 +113,9 @@ h2 {
 }
 
 .btn img {
-  width: 100px;
+  width: 50px;
   height: auto;
-  padding: 15px;
+  padding: 10px;
 }
 
 #unicorn {
@@ -129,7 +130,7 @@ h2 {
 #teddy {
   background-color: #FFF1AD;
   border: none;
-  margin: 0 25px;
+  margin: 0 10px;
 }
 
 #teddy:hover {
@@ -149,15 +150,9 @@ h2 {
 
 /* Game area */
 
-#game-msg {
+#game-section, #game-msg {
   display: none;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-}
-
-#game-section {
-  display: none;
   align-items: center;
   justify-content: center;
 }
@@ -180,8 +175,8 @@ h2 {
 }
 
 .board-box {
-  height: 3em;
-  width: 3em;
+  height: 2.5em;
+  width: 2.5em;
   border: #3D3D3D 1px solid;
   border-radius: 5px;
   margin: 1px;
@@ -207,30 +202,58 @@ h2 {
   font-size: 30px;
 }
 
+#play-again-btn {
+  display: flex;
+  justify-content: center;
+}
+
 
 /* MEDIA QUERIES */ 
 
     /* On screens that are 1050 px or less - pricelist will center */
-  @media screen and (max-width: 450px) {
+  @media screen and (min-width: 450px) {
+    body {
+      font-size: 24px;
+    }
+    h1 {
+      font-size: 48px;
+      padding-top: 25px;
+    }
+    h2 {
+      font-size: 30px;
+    }
+    /* Presentation area */
     #name-area {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-direction: column;
+      flex-direction: row;
     }
-    h1 {
-      font-size: 48px;
+    #uname-input {
+      font-size: 24px;
     }
-    #game-section {
-      flex-direction: column;
+    #submit-name-btn {
+      font-size: 24px;
+    }
+    /* Character area */
+    #character-buttons {
+      margin: 30px 0;
     }
     .btn img {
-      width: 50px;
+      width: 100px;
     }
     #teddy {
-      margin: 0 7px;
+      margin: 0 25px;
     }
-    #game-msg {
-      margin-bottom: 10px;
+    /* Game area */
+    #game-section, #game-msg {
+      flex-direction: row;
+    }
+    #game-board {
+      width: 10em;
+    }
+    .board-box {
+      height: 3em;
+      width: 3em;
     }
   }
