@@ -35,14 +35,6 @@ h2 {
   flex-direction: column;
 }
 
-#first-icon-roboto {
-  padding-right: 15px;
-}
-
-#presentation {
-  padding-left: 15px;
-}
-
 #uname-input {
   font-size: 18px;
   font-family: 'Indie Flower', Courier, monospace;
@@ -54,7 +46,7 @@ h2 {
 }
 
 #submit-name-btn {
-  width: 100%;
+  width: 75%;
   font-size: 18px;
   font-family: 'Indie Flower', Courier, monospace;
   font-weight: 700;
@@ -71,10 +63,6 @@ h2 {
 
 
 /* Character area */
-
-/* .character-area {
-  display: none; 
-}*/
 
 #character-area {
   display: none;
@@ -150,11 +138,27 @@ h2 {
 
 /* Game area */
 
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #game-section, #game-msg {
   display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.info-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1em;
+  width: 100%;
 }
 
 #user-area {
@@ -166,7 +170,7 @@ h2 {
 
 #game-board {
   display: flex;
-  width: 10em;
+  width: 16em;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
@@ -175,8 +179,8 @@ h2 {
 }
 
 .board-box {
-  height: 2.5em;
-  width: 2.5em;
+  height: 4em;
+  width: 4em;
   border: #3D3D3D 1px solid;
   border-radius: 5px;
   margin: 1px;
